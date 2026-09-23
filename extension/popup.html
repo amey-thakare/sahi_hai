@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahi Hai - URL Safety Inspector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="app-body">
+    <!-- Pulsing Danger Ambient Glow on threat detection -->
+    <div id="danger-ambient-glow" class="danger-ambient-glow"></div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="logo-wrapper" id="header-logo-wrapper">
+                    <img src="icons/icon-32.png" alt="Logo" class="logo-img" id="header-logo-img">
+                </div>
+                <div class="brand-text">
+                    <h1 class="brand-title">Sahi Hai</h1>
+                    <span class="brand-tagline">AI Security Inspector</span>
+                </div>
+            </div>
+            <div class="badge-status" id="badge-status">Protected</div>
+        </header>
+
+        <!-- Threat Banner (Appears only when danger is detected) -->
+        <div id="threat-alert-banner" class="threat-alert-banner">
+            <div class="threat-alert-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 6h2v2h-2z"/>
+                </svg>
+            </div>
+            <div class="threat-alert-content">
+                <div class="threat-alert-title">SECURITY WARNING</div>
+                <div class="threat-alert-desc">Do not enter passwords, credit cards, or sensitive data on this website.</div>
+            </div>
+        </div>
+
+        <!-- Current Target URL Box -->
+        <section class="url-card" id="url-card">
+            <div class="url-card-header">
+                <span class="url-label">Inspecting Active URL</span>
+                <span class="url-security-chip" id="url-security-chip">Checking...</span>
+            </div>
+            <div class="url-display" id="url-display" title="Active URL">
+                <span class="url-protocol" id="url-protocol">https://</span>
+                <span class="url-domain" id="url-domain">Loading...</span>
+                <span class="url-path" id="url-path"></span>
+            </div>
+        </section>
+
+        <!-- Main Action & Result Card -->
+        <main class="main-card" id="main-card">
+            <div id="result-container" class="result-container state-idle">
+                <div class="result-icon-wrapper" id="result-icon">
+                    <svg class="icon-shield" viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <div class="result-verdict" id="result-verdict">Scanning Site...</div>
+                <div class="result-subtext" id="result-subtext">Evaluating neural network & heuristic safety parameters.</div>
+                
+                <div class="confidence-bar-container" id="confidence-container">
+                    <div class="confidence-labels">
+                        <span id="confidence-title">Safety Confidence</span>
+                        <span id="confidence-pct">--%</span>
+                    </div>
+                    <div class="meter-track">
+                        <div class="meter-fill" id="meter-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Threat Breakdown Tags -->
+                <div class="threat-tags-container" id="threat-tags-container"></div>
+            </div>
+
+            <!-- Inspect / Action Button -->
+            <button id="inspect-btn" class="action-btn">
+                <span class="btn-spinner" id="btn-spinner"></span>
+                <span class="btn-icon" id="btn-icon">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                    </svg>
+                </span>
+                <span class="btn-text" id="btn-text">Re-analyze Active Page</span>
+            </button>
+        </main>
+
+        <!-- Deep Diagnostics Collapsible -->
+        <details class="diagnostics-accordion" id="diagnostics-accordion">
+            <summary class="diagnostics-summary">
+                <span class="diag-title">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    Security Signals Breakdown
+                </span>
+                <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </summary>
+            <div class="signals-grid" id="signals-grid">
+                <!-- Dynamically filled with checks -->
+            </div>
+        </details>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>Powered by Scikit-Learn Neural Net • Standalone MV3</span>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="detector.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
