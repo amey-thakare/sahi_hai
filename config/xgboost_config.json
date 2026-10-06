@@ -1,0 +1,26 @@
+{
+  "xgboost_version": "auto",
+  "objective": "binary:logistic",
+  "eval_metric": "logloss",
+  "random_seed": 42,
+  "hyperparameter_search_space": {
+    "n_estimators": [100],
+    "max_depth": [5],
+    "learning_rate": [0.1],
+    "subsample": [0.8],
+    "colsample_bytree": [0.8]
+  },
+  "structural_dim": 12,
+  "semantic_dim": 384,
+  "data": {
+    "train_dataset": "data/splits/train.parquet",
+    "val_dataset": "data/splits/val.parquet",
+    "test_dataset": "data/splits/test.parquet"
+  },
+  "class_mapping": {
+    "BENIGN": 0,
+    "MALICIOUS": 1
+  },
+  "threshold_policy": "default_0.5",
+  "hardware": "auto"
+}

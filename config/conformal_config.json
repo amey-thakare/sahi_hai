@@ -1,0 +1,48 @@
+{
+  "method": "inductive_conformal_prediction",
+  "nonconformity_score": "1 - predicted_probability_true_class",
+  "primary_alpha": 0.05,
+  "sensitivity_alphas": [
+    0.01,
+    0.025,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "calibration_dataset": "data/splits/calibration.parquet",
+  "calibration_samples": 101255,
+  "calibration_class_distribution": {
+    "0": 67559,
+    "1": 33696
+  },
+  "class_mapping": {
+    "0": "benign",
+    "1": "malicious"
+  },
+  "hxrf_model_path": "models/stage1_hxrf_icp.pkl",
+  "calibrator_path": "models/stage1_conformal.pkl",
+  "features": [
+    "domain_len",
+    "path_depth",
+    "special_count_v2",
+    "token_count",
+    "url_entropy",
+    "url_len",
+    "=",
+    ".",
+    "//",
+    "abnormal_url",
+    "phish_adv_hyphen_count",
+    "suspicious_extension"
+  ],
+  "random_seed": 42,
+  "quantile_method": "ceil((n+1)(1-alpha))-1, clipped to [0, n-1]",
+  "finite_sample_correction": true,
+  "conformal_quantiles": {
+    "0.01": 0.823839445760937,
+    "0.025": 0.6753492991188115,
+    "0.05": 0.5574569851880968,
+    "0.1": 0.42372281504944875,
+    "0.2": 0.22973734721981032
+  }
+}

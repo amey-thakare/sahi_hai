@@ -1,0 +1,11 @@
+{
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dimension": 384,
+    "input_type": "raw_url",
+    "normalization": false,
+    "max_seq_length": 256,
+    "device": "cpu",
+    "batch_size": 32,
+    "framework": "pytorch",
+    "random_seed": 42
+}

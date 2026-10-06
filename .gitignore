@@ -4,3 +4,10 @@ test/__pycache__/
 test/markup.txt
 test/features_extraction.pyc
 test/patterns.pyc
+
+# Ignore large datasets and embeddings
+*.npy
+dataset/*.csv
+data/
+__pycache__/
+.DS_Store

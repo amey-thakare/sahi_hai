@@ -1,0 +1,89 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+======================================================================
+PHASE 11: Risk-Controlled Stage-1 Routing
+======================================================================
+
+[0] Loading test data and models...
+    Test URLs: 126569
+
+[0A] Investigating NEEDS_STAGE2 discrepancy...
+    Extracting features from raw URLs (Phase-10 style)...
+    Phase-9 style (parquet + ICP-HXRF):    NEEDS_STAGE2 = 5473
+    Phase-10 style (URL + DSSE-HXRF):      NEEDS_STAGE2 = 6171
+    Hybrid A (parquet + DSSE-HXRF):         NEEDS_STAGE2 = 5530
+    Hybrid B (URL + ICP-HXRF):              NEEDS_STAGE2 = 6128
+    Rows with feature differences:          31505
+    Population integrity report written.
+
+[0B] Establishing canonical Phase-11 baseline...
+    Canonical baseline NEEDS_STAGE2: 5530
+    Canonical baseline resolved: 121039
+
+[1] Analyzing Stage-1 score distributions...
+    Stage-1 FN (mal→FINAL_BENIGN): 4753
+    Stage-1 FP (ben→FINAL_MALICIOUS): 1400
+
+[2] Running threshold sweep (Experiment A)...
+    ICP conformal quantile q_α: 0.557457
+    Threshold sweep complete: 2285 combinations evaluated
+
+[3] Running asymmetric conformal routing (Experiment B)...
+    Baseline (α=0.05 symmetric): S2=5530, FN=4753
+    Conformal sweep complete: 144 combinations evaluated
+
+[4] Generating coverage-risk curves...
+
+[5] Running end-to-end DSSE at selected operating points...
+    Loading Stage-2 components...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 9677.72it/s]
+    Running DSSE for policy: P0: Baseline (α=0.05 sym)...
+    Running DSSE for policy: P1: α_b=0.025, α_m=0.05...
+    Running DSSE for policy: P2: α_b=0.02, α_m=0.05...
+    Running DSSE for policy: P3: α_b=0.01, α_m=0.05...
+    Running DSSE for policy: P4: α_b=0.025, α_m=0.10...
+    Running DSSE for policy: P5: α_b=0.02, α_m=0.10...
+    Running DSSE for policy: P6: α_b=0.01, α_m=0.10...
+    Running DSSE for policy: P7: α_b=0.025, α_m=0.15...
+    Running DSSE for policy: P8: α_b=0.02, α_m=0.15...
+    Running DSSE for policy: P9: α_b=0.01, α_m=0.15...
+    Running DSSE for policy: P10: α_b=0.03, α_m=0.075...
+    Running DSSE for policy: P11: α_b=0.02, α_m=0.075...
+
+    End-to-end results:
+                   policy       f1   recall  precision  accuracy  roc_auc  s2_rate  s1_fn  total_errors
+P0: Baseline (α=0.05 sym) 0.907657 0.870302   0.948362  0.941068 0.976843 0.043692   4753          7459
+  P1: α_b=0.025, α_m=0.05 0.911015 0.859453   0.969159  0.944125 0.976608 0.065703   4753          7072
+   P2: α_b=0.02, α_m=0.05 0.910780 0.857577   0.971022  0.944086 0.976523 0.069511   4753          7077
+   P3: α_b=0.01, α_m=0.05 0.910137 0.855891   0.971725  0.943754 0.976267 0.073636   4753          7119
+  P4: α_b=0.025, α_m=0.10 0.892275 0.815389   0.985170  0.934478 0.976025 0.017532   7417          8293
+   P5: α_b=0.02, α_m=0.10 0.891995 0.813513   0.987237  0.934439 0.975911 0.021340   7417          8298
+   P6: α_b=0.01, α_m=0.10 0.891307 0.811828   0.988038  0.934107 0.975617 0.025464   7417          8340
+  P7: α_b=0.025, α_m=0.15 0.880380 0.791007   0.992523  0.928466 0.976234 0.001430   8775          9054
+   P8: α_b=0.02, α_m=0.15 0.878948 0.787612   0.994246  0.927802 0.976130 0.002378   8895          9138
+   P9: α_b=0.01, α_m=0.15 0.878230 0.785926   0.995100  0.927470 0.975826 0.006502   8895          9180
+ P10: α_b=0.03, α_m=0.075 0.901018 0.836566   0.976229  0.938832 0.976170 0.031896   6260          7742
+ P11: α_b=0.02, α_m=0.075 0.900913 0.832886   0.981040  0.939029 0.976007 0.039678   6260          7717
+
+[6] Statistical analysis...
+    Baseline: P0: Baseline (α=0.05 sym) — F1=0.9077
+    Best F1:  P1: α_b=0.025, α_m=0.05 — F1=0.9110
+    McNemar: statistic=114.5242, p-value=1.0004e-26
+    F1 difference 95% CI: [0.0025, 0.0042]
+    Recall difference 95% CI: [-0.0118, -0.0099]
+
+[7] Error analysis...
+    Error analysis written.
+
+[8] Writing reports...
+
+[9] Writing final audit...
+
+======================================================================
+PHASE 11 COMPLETE
+======================================================================
+
+Baseline:  P0: Baseline (α=0.05 sym) — F1=0.9077, Recall=0.8703, S2=4.37%
+Best:      P1: α_b=0.025, α_m=0.05 — F1=0.9110, Recall=0.8595, S2=6.57%
+McNemar p=1.0004e-26
+F1 CI: [0.0025, 0.0042]
+Recall CI: [-0.0118, -0.0099]

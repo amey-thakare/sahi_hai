@@ -1,0 +1,38 @@
+{
+  "model_name": "structural_semantic_film",
+  "minilm_model": "all-MiniLM-L6-v2",
+  "embedding_dim": 384,
+  "structural_features": [
+    "domain_len",
+    "path_depth",
+    "special_count_v2",
+    "token_count",
+    "url_entropy",
+    "url_len",
+    "=",
+    ".",
+    "//",
+    "abnormal_url",
+    "phish_adv_hyphen_count",
+    "suspicious_extension"
+  ],
+  "structural_dim": 12,
+  "gamma_architecture": [12, 64, 384],
+  "beta_architecture": [12, 64, 384],
+  "hidden_dim": 64,
+  "activation": "ReLU",
+  "dropout": 0.1,
+  "optimizer": "AdamW",
+  "learning_rate": 1e-3,
+  "epochs": 50,
+  "batch_size": 256,
+  "early_stopping_patience": 10,
+  "random_seed": 42,
+  "classifier": "LogisticRegression",
+  "data": {
+    "train_dataset": "data/splits/train.parquet",
+    "val_dataset": "data/splits/val.parquet",
+    "test_dataset": "data/splits/test.parquet"
+  },
+  "scaler": "StandardScaler"
+}

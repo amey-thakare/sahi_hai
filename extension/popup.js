@@ -226,23 +226,47 @@ async function performScan() {
       return;
     }
 
-    const [model, domStats] = await Promise.all([
-      loadModel(),
+    const [domStats] = await Promise.all([
       collectDOMStats(tab.id)
     ]);
 
+    // Keep extracting local DOM features for the UI signals grid
     const { featureVector, features } = window.SahiHaiDetector.extractFeatures(tab.url, domStats);
     renderSignals(features);
 
     let isSafe = true;
     let confidence = 95;
+    let needsStage2 = false;
 
-    if (model) {
-      const safeProb = window.SahiHaiDetector.runNeuralNetwork(featureVector, model);
-      isSafe = safeProb >= 0.5;
-      confidence = Math.round(isSafe ? safeProb * 100 : (1 - safeProb) * 100);
-    } else {
-      // Fallback heuristic scoring
+    try {
+      const formData = new URLSearchParams();
+      formData.append('url', tab.url);
+      
+      const response = await fetch('http://127.0.0.1:8000/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString()
+      });
+      
+      const result = await response.json();
+      
+      if (result.result === 'FINAL_BENIGN') {
+        isSafe = true;
+      } else if (result.result === 'FINAL_MALICIOUS') {
+        isSafe = false;
+      } else if (result.result === 'NEEDS_STAGE2') {
+        isSafe = false;
+        needsStage2 = true;
+      } else {
+        // Fallback for errors or older backend
+        isSafe = result.result === 'SAFE';
+      }
+      
+      confidence = Math.round(result.confidence || 0);
+      
+    } catch (err) {
+      console.error("Backend error:", err);
+      // Fallback heuristic scoring if server is down
       const score = featureVector.reduce((a, b) => a + b, 0);
       isSafe = score >= 0;
       confidence = Math.min(99, Math.max(60, Math.round(50 + Math.abs(score) * 2.5)));
@@ -252,7 +276,27 @@ async function performScan() {
     confPctEl.textContent = `${confidence}%`;
     meterFill.style.width = `${confidence}%`;
 
-    if (isSafe) {
+    if (needsStage2) {
+      // AMBIGUOUS / NEEDS STAGE 2 STATE (Orange/Yellow Alert Interface)
+      body.classList.remove('threat-active'); // maybe add a warning class later if desired
+      container.className = 'result-container state-warning';
+      badgeStatus.textContent = 'DEEP SCAN REQUIRED';
+      badgeStatus.style.background = 'rgba(245, 158, 11, 0.25)'; // amber
+      badgeStatus.style.color = '#d97706'; // darker amber
+      badgeStatus.style.borderColor = 'rgba(245, 158, 11, 0.5)';
+
+      confTitleEl.textContent = 'Analysis Pending';
+      verdictEl.textContent = 'STAGE 2 REQUIRED';
+      subtextEl.textContent = 'Ambiguous signals detected. This URL requires deeper semantic analysis (Stage 2) which is currently pending.';
+      meterFill.style.backgroundColor = '#f59e0b'; // amber
+      iconWrapper.innerHTML = `
+        <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      `;
+    } else if (isSafe) {
       // SAFE STATE (Green)
       body.classList.remove('threat-active');
       container.className = 'result-container state-safe';

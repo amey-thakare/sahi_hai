@@ -1,0 +1,605 @@
+[
+  {
+    "feature": "domain_len",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 237,
+    "variance": 122.97706470610073,
+    "correlation": 0.005566717886063468,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "path_len",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 374,
+    "variance": 782.9175800096048,
+    "correlation": -0.19376557465929267,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "query_len",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 430,
+    "variance": 1156.2235443263423,
+    "correlation": 0.16046293122633942,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "path_depth",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 29,
+    "variance": 2.1971751646610613,
+    "correlation": -0.17548949702537658,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "subdomain_count",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 27,
+    "variance": 1.0236228820600106,
+    "correlation": 0.04674479957627258,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "query_param_count",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 33,
+    "variance": 2.1797678561946303,
+    "correlation": 0.26119045482028536,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "has_port",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.008011421930492585,
+    "correlation": 0.12210211901092467,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "is_ip_host",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.018650010091621285,
+    "correlation": 0.19644155873082506,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "has_punycode",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.00021130333733928328,
+    "correlation": 0.011359266557437554,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "is_https",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.02309749043628958,
+    "correlation": 0.17694016132058782,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "is_shortener",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.0008742545870352841,
+    "correlation": -0.003746211124601419,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "digit_count_v2",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 215,
+    "variance": 133.36100526014707,
+    "correlation": -0.02883310501319868,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "letter_count_v2",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 405,
+    "variance": 959.9153349557361,
+    "correlation": 0.018522887109468995,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "special_count_v2",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 153,
+    "variance": 52.43715099163439,
+    "correlation": 0.0013128125297413118,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "digit_ratio",
+    "dtype": "float64",
+    "missing_rate": 0.0,
+    "nunique": 4314,
+    "variance": 0.008766969518049584,
+    "correlation": 0.019375894550779163,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "letter_ratio",
+    "dtype": "float64",
+    "missing_rate": 0.0,
+    "nunique": 5189,
+    "variance": 0.010505448782177075,
+    "correlation": -0.03416598417139631,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "special_ratio",
+    "dtype": "float64",
+    "missing_rate": 0.0,
+    "nunique": 2754,
+    "variance": 0.0014656291117616923,
+    "correlation": 0.044070884031739026,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "token_count",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 79,
+    "variance": 25.47523093213372,
+    "correlation": 0.04078816693736372,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "max_token_len",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 269,
+    "variance": 254.2254969052302,
+    "correlation": 0.010954878310651308,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "avg_token_len",
+    "dtype": "float64",
+    "missing_rate": 0.0,
+    "nunique": 2080,
+    "variance": 7.381687043316322,
+    "correlation": -0.034236008299929725,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "url_entropy",
+    "dtype": "float64",
+    "missing_rate": 0.0,
+    "nunique": 20156,
+    "variance": 0.123351475612307,
+    "correlation": -0.04525138465193054,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "host_entropy",
+    "dtype": "float64",
+    "missing_rate": 0.0,
+    "nunique": 5640,
+    "variance": 0.13995779137690537,
+    "correlation": 0.005339891347314843,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "url_len_v2",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 524,
+    "variance": 1896.398870227582,
+    "correlation": 0.005750447194022673,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "url_len",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 522,
+    "variance": 1991.2084586342733,
+    "correlation": 0.048477115593196785,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "@",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 7,
+    "variance": 0.003041060758735724,
+    "correlation": 0.014057300735556907,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "?",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 17,
+    "variance": 0.19297421916899482,
+    "correlation": 0.1362900011023377,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "-",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 48,
+    "variance": 8.964884314154263,
+    "correlation": -0.13379890616444673,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "=",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 30,
+    "variance": 2.2437767435623157,
+    "correlation": 0.26029509809403484,
+    "real_time_eligible": true
+  },
+  {
+    "feature": ".",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 33,
+    "variance": 1.9128073865036053,
+    "correlation": 0.1145802616046607,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "#",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 6,
+    "variance": 0.0008468587928950476,
+    "correlation": 0.021298765861303828,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "%",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 119,
+    "variance": 17.448771555233048,
+    "correlation": -0.048088635375673656,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "+",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 32,
+    "variance": 0.3978484597989235,
+    "correlation": -0.06919602946975656,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "$",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 6,
+    "variance": 0.00044636411712771013,
+    "correlation": 0.00510258746122557,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "!",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 6,
+    "variance": 0.0015003161747556054,
+    "correlation": 0.007783282202007399,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "*",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 8,
+    "variance": 0.006812377178137279,
+    "correlation": 0.0013764768995086435,
+    "real_time_eligible": true
+  },
+  {
+    "feature": ",",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 10,
+    "variance": 0.02196388853352543,
+    "correlation": 0.029235561936526974,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "//",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 7,
+    "variance": 0.208372379931847,
+    "correlation": 0.6070276937803676,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "digits",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 215,
+    "variance": 133.5456248878715,
+    "correlation": -0.028805904328806045,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "letters",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 408,
+    "variance": 996.1011988774926,
+    "correlation": 0.053806206052225136,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "abnormal_url",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.20064581692133865,
+    "correlation": -0.6148469468451293,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "https",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.02309749043628958,
+    "correlation": 0.17694016132058782,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "Shortining_Service",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.05776824792021347,
+    "correlation": -0.04576895884093616,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "having_ip_address",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.019177939642773364,
+    "correlation": 0.19503512029924966,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_urgency_words",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 7,
+    "variance": 0.08001857190175496,
+    "correlation": -0.010948383871119495,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_security_words",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 3,
+    "variance": 0.0044032957204467385,
+    "correlation": -2.877380604755336e-05,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_brand_mentions",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 4,
+    "variance": 0.0445669297138251,
+    "correlation": -0.09121473865120981,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_brand_hijack",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.043301417251223766,
+    "correlation": -0.09969568918440404,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_multiple_subdomains",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.02346616537471424,
+    "correlation": 0.21923859602648102,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_long_path",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.19638176210147407,
+    "correlation": -0.269600300479654,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_many_params",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.1093568829774291,
+    "correlation": 0.23342313950293053,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_suspicious_tld",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.000870311054823924,
+    "correlation": 0.04180842952354807,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_exact_brand_match",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.002042135313736193,
+    "correlation": 0.06411800667962912,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_brand_in_subdomain",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.0031326913601524937,
+    "correlation": 0.03711196370206213,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_brand_in_path",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.051049125812746426,
+    "correlation": -0.1085218436897272,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_hyphen_count",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 12,
+    "variance": 0.06801070175487171,
+    "correlation": 0.2676995365496874,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_number_count",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 46,
+    "variance": 3.33212388876919,
+    "correlation": 0.21255618816832395,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_suspicious_tld",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.0007105717707039091,
+    "correlation": 0.03777122242079236,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_long_domain",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.007321055621214281,
+    "correlation": 0.12205342620143436,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_many_subdomains",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.0029501171665722824,
+    "correlation": 0.0771355704624746,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_encoded_chars",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 119,
+    "variance": 17.448771555233048,
+    "correlation": -0.048088635375673656,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_path_keywords",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 7,
+    "variance": 0.060638841649167274,
+    "correlation": -0.010690042046969194,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_has_redirect",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.00494885481311158,
+    "correlation": -0.03145909069670093,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "phish_adv_many_params",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 32,
+    "variance": 1.4307459113702463,
+    "correlation": 0.27036100673650415,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "path_has_hacked_terms",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.013804315252127426,
+    "correlation": -0.025430642910668218,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "suspicious_extension",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 0.2241339684492574,
+    "correlation": 0.19087723270914872,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "path_underscore_count",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 41,
+    "variance": 1.171025653731367,
+    "correlation": -0.13856160245079893,
+    "real_time_eligible": true
+  },
+  {
+    "feature": "is_gov_edu",
+    "dtype": "int64",
+    "missing_rate": 0.0,
+    "nunique": 2,
+    "variance": 1.9751759874869995e-05,
+    "correlation": 0.00440666352685281,
+    "real_time_eligible": true
+  }
+]

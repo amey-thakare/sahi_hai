@@ -1,0 +1,64 @@
+{
+  "model_name": "HXRF",
+  "model_type": "RandomForestClassifier",
+  "model_path": "models/stage1_hxrf.pkl",
+  "features": [
+    "domain_len",
+    "path_depth",
+    "special_count_v2",
+    "token_count",
+    "url_entropy",
+    "url_len",
+    "=",
+    ".",
+    "//",
+    "abnormal_url",
+    "phish_adv_hyphen_count",
+    "suspicious_extension"
+  ],
+  "feature_count": 12,
+  "target_column": "dsse_binary_target",
+  "class_mapping": {
+    "0": "benign",
+    "1": "malicious"
+  },
+  "random_seed": 42,
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_depth": 15,
+    "min_samples_split": 10,
+    "min_samples_leaf": 4,
+    "max_features": "log2"
+  },
+  "class_weight": "balanced",
+  "training_dataset": "data/splits/train.parquet",
+  "training_samples": 506275,
+  "test_dataset": "data/splits/test.parquet",
+  "test_samples": 126569,
+  "validation_procedure": "5-fold stratified cross-validation on training set only",
+  "feature_order": [
+    "domain_len",
+    "path_depth",
+    "special_count_v2",
+    "token_count",
+    "url_entropy",
+    "url_len",
+    "=",
+    ".",
+    "//",
+    "abnormal_url",
+    "phish_adv_hyphen_count",
+    "suspicious_extension"
+  ],
+  "training_datetime": "2026-09-23T16:41:00+05:30",
+  "environment": {
+    "python": "3.12.0",
+    "scikit_learn": "1.9.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "shap": "0.52.0",
+    "os": "macOS-26.6.2-arm64-arm-64bit",
+    "cpu": "arm (Apple Silicon)",
+    "architecture": "arm64"
+  }
+}

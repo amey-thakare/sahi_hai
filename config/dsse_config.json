@@ -1,0 +1,43 @@
+{
+  "stage1": {
+    "hxrf_model_path": "models/stage1_hxrf.pkl",
+    "structural_features": [
+      "domain_len",
+      "path_depth",
+      "special_count_v2",
+      "token_count",
+      "url_entropy",
+      "url_len",
+      "=",
+      ".",
+      "//",
+      "abnormal_url",
+      "phish_adv_hyphen_count",
+      "suspicious_extension"
+    ]
+  },
+  "conformal": {
+    "calibrator_path": "models/stage1_conformal.pkl"
+  },
+  "stage2": {
+    "minilm_model": "all-MiniLM-L6-v2",
+    "film_model_path": "models/film/film_model.pth",
+    "film_scaler_path": "models/film/film_scaler.pkl",
+    "xgboost_model_path": "models/xgboost_audit/film_xgb.json",
+    "semantic_dim": 384,
+    "structural_dim": 12,
+    "hidden_dim": 64,
+    "dropout": 0.1,
+    "threshold": 0.5,
+    "batch_size": 1000
+  },
+  "data": {
+    "test_dataset": "data/splits/test.parquet"
+  },
+  "target_mapping": {
+    "BENIGN": 0,
+    "MALICIOUS": 1
+  },
+  "device": "auto",
+  "version": "1.0.0"
+}

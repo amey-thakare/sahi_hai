@@ -1,0 +1,17 @@
+{
+    "feature_count": 12,
+    "features": [
+        "domain_len",
+        "path_depth",
+        "special_count_v2",
+        "token_count",
+        "url_entropy",
+        "url_len",
+        "=",
+        ".",
+        "//",
+        "abnormal_url",
+        "phish_adv_hyphen_count",
+        "suspicious_extension"
+    ]
+}
